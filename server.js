@@ -1,4 +1,5 @@
 // IMPORTS
+import "express-async-errors";
 import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
@@ -48,6 +49,12 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 5100;
 
-app.listen(5100, () => {
-  console.log(`server running on port ${port}...`);
-});
+try {
+  await mongoose.connect(process.env.MONGO_URL);
+  app.listen(port, () => {
+    console.log(`server running on PORT ${port}....`);
+  });
+} catch (error) {
+  console.log(error);
+  process.exit(1);
+}
