@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 
 //
 import jobRouter from "./routes/jobRouter.js";
+import authRouter from "./routes/authRouter.js";
 
 // IMPORT END
 
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/jobs", jobRouter);
+app.use("/api/v1/auth", authRouter);
 
 // Not Found Middleware
 
