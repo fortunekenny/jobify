@@ -29,6 +29,10 @@ app.use(express.json());
 
 //MIDDLEWARE ENDS
 
+app.get("/api/v1/test", (req, res) => {
+  res.json({ msg: "test route" });
+});
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
