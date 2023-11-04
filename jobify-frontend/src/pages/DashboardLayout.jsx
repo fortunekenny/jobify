@@ -17,13 +17,8 @@ export const loader = async () => {
 const DashboardContext = createContext();
 
 const DashboardLayout = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const { user } = useLoaderData();
 
-  // const { user } = useLoaderData();
-
-  // temp
-  const user = { name: "john" };
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
 
@@ -60,7 +55,7 @@ const DashboardLayout = () => {
           <div>
             <Navbar />
             <div className="dashboard-page">
-              <Outlet />
+              <Outlet context={{ user }} />
             </div>
           </div>
         </main>
