@@ -42,7 +42,7 @@ export const validateJobInput = withValidationErrors([
 export const validateIdParam = withValidationErrors([
   param("id").custom(async (value, { req }) => {
     const isValidId = mongoose.Types.ObjectId.isValid(value);
-    if (!isValidId) throw new BadRequestError("invalid MongoDB id");
+    if (!isValidId) throw new BadRequestError("invalid job id");
     const job = await Job.findById(value);
     if (!job) throw new NotFoundError(`no job with id : ${value}`);
     const isAdmin = req.user.role === "admin";
