@@ -17,11 +17,10 @@ router.get("/admin/app-stats", [
   authorizePermissions("admin"),
   getApplicationStats,
 ]);
-router.patch("/update-user", validateUpdateUserInput, updateUser);
-export default router;
 router.patch(
   "/update-user",
   upload.single("avatar"),
   validateUpdateUserInput,
   updateUser
 );
+export default router;
