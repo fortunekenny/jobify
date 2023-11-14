@@ -82,6 +82,11 @@ npm install @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6 a
 
 ```
 
+```sh my modification
+npm install @tanstack/react-query @tanstack/react-query-devtools axios@ dayjs react-icons react-router-dom react-toastify recharts styled-components
+
+```
+
 #### Router
 
 [React Router](https://reactrouter.com/en/main)
